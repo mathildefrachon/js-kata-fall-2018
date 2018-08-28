@@ -5,11 +5,114 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>kata 1</title>
+
+    <style>
+        body {
+            background-color: cadetblue;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 1.5em;
+            color: darkslategrey;
+            text-align: center;
+
+
+
+        }
+
+        #cookies {
+            width: 30vw;
+            height: 20vh;
+            background-color: floralwhite;
+            padding: 2% 2% 2% 2%;
+            position: absolute;
+            left: 32vw;
+            box-shadow: 0px 5px 17px rgba(93, 128, 123, 0.6);
+
+
+
+        }
+
+        #accept {
+            width: 25%;
+            height: 20%;
+            background-color: cadetblue;
+            color: floralwhite;
+            border: none;
+            box-shadow: 0px 2px 14px rgba(93, 128, 123, 0.6);
+
+        }
+
+        #accept:hover {
+            transform: scale(1.1);
+        }
+
+
+        .openCookies {
+            animation: appearCookies 0.3s forwards 0s ease;
+        }
+
+        .closeCookies {
+            animation: disappearCookies 0.3s forwards 0s ease;
+        }
+
+
+        @keyframes appearCookies {
+            0% {
+                top: -20vh;
+                opacity: 0;
+
+            }
+            100% {
+                top: 35vh;
+                opacity: 1;
+            }
+
+        }
+
+
+        @keyframes disappearCookies {
+            0% {
+                top: 35vh;
+                opacity: 1;
+
+            }
+            100% {
+                top: -20vh;
+                opacity: 0;
+            }
+
+        }
+    </style>
 </head>
 
 <body>
 
+    <div id="cookies" class="openCookies">
+        <p>THIS SITE USES COOKIES. <br> TO CONTINUE, PLEASE ACCEPT OUR TERMS.</p>
+        <button id="accept"> I ACCEPT </button>
+    </div>
+
+    <script>
+
+        let cookies = document.querySelector('#cookies');
+        let button = document.querySelector('#accept');
+
+
+
+        button.addEventListener('click', closeCookies);
+
+        function closeCookies() {
+            console.log("close the cookies");
+            cookies.classList.remove("openCookies");
+            cookies.classList.add("closeCookies");
+        }
+
+
+
+
+    </script>
 </body>
+
+
 
 </html>
